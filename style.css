@@ -1,0 +1,79 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #efefef;
+  height: 100vh;
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #262626;
+  width: 239px;
+  height: 485px;
+  border-radius: 1.3rem;
+}
+
+.button-conti {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.screen-conti,
+.screenValue {
+  width: inherit;
+  height: 195px;
+  color: #fff;
+  border-top-left-radius: 1.3rem;
+  border-top-right-radius: 1.3rem;
+  background: #262626;
+  border-bottom-color: #262626;
+  border: none;
+}
+
+tr {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+button {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.3rem;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 50%;
+  border: none;
+  background: #262626;
+  box-shadow: 2px 2px 4px #0c0c0c, -1px -1px 3px #000;
+}
+button:hover {
+  box-shadow: 0 2px 3px #0c0c0c, 0 -1px 3px #000;
+  top: 1px;
+}
+button:active {
+  box-shadow: inset 1px 1px 3px #0c0c0c, inset -1px -1px 3px #000;
+  top: 5px;
+}
+
+.equal,
+.all-clear {
+  background-color: #dd6969;
+}
