@@ -21,6 +21,18 @@ body {
   width: 239px;
   height: 485px;
   border-radius: 1.3rem;
+  position: relative;
+}
+
+.curved {
+  height: 277px;
+  width: 62px;
+  background-color: #000000;
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  position: absolute;
+  right: 0;
+  bottom: 25px;
 }
 
 .button-conti {
@@ -76,4 +88,10 @@ button:active {
 .equal,
 .all-clear {
   background-color: #dd6969;
+}
+
+.equal {
+  width: 105px;
+  padding: 5px 10px;
+  border-radius: 35px;
 }
