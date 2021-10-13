@@ -24,10 +24,9 @@ footer {
   margin-top: 1rem;
 }
 
-a{
+a {
   text-decoration: none;
   margin: 0rem 0.5rem;
-
 }
 
 i {
@@ -63,31 +62,57 @@ i {
 .screenValue,
 .screenTopValue {
   width: inherit;
-  color: #fff;
   background: #262626;
   border-bottom-color: #262626;
   border: none;
   font-family: "Lato", sans-serif;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .screen-conti {
   border-top-left-radius: 1.3rem;
   border-top-right-radius: 1.3rem;
+  position: relative;
+  height: 195px;
+  display: flex;
 }
 
+/* input, textarea { 
+ unicode-bidi:plaintext; 
+ direction:rtl; 
+} */
+
 .screenTopValue {
+  color: rgb(194, 194, 194);
+  text-align: right;
   border-top-left-radius: 1.3rem;
   border-top-right-radius: 1.3rem;
-  height: 97.5px;
   font-size: 1.2rem;
-  padding: 1rem;
+  padding: 0 15px;
+  margin-bottom: 0px;
+  position: absolute;
+  top: 0;
+  float: right;
+  height: 170px;
 }
 
 .screenValue {
+  color: #fff;
+  text-align: right;
+  position: absolute;
   height: 97.5px;
   font-size: 2rem;
-  padding: 1rem;
+  padding: 0 15px;
+  margin-top: 0px;
+  bottom: 0;
+  float: right;
 }
+
+/* .screenValue:active,.screenValue:focus,
+.screenTopValue:active,.screenTopValue:focus{
+  outline: none;
+} */
 
 tr {
   display: flex;
