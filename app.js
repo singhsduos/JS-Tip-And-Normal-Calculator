@@ -15,7 +15,7 @@ for (let item of numsBtns) {
             screen.value = screenValue;
         }
         else if (buttonText == '÷') {
-            
+            buttonText = '/';
             screenValue += buttonText;
             screen.value = screenValue;
         }
