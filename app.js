@@ -1,4 +1,5 @@
 const screen = document.querySelector('.screenValue');
+const topScreen = document.querySelector('.screenTopValue');
 const allClear = document.querySelector('.all-clear');
 const equal = document.querySelector('.equal');
 const operators = document.querySelectorAll('.operator');
@@ -32,7 +33,10 @@ for (let item of numsBtns) {
             screen.value = screenValue;
         }
         else if (buttonText == '=') {
-            screen.value = eval(screenValue);
+
+                topScreen.value = eval(screenValue);
+                console.log(screen.value);
+            
         }
         else {
             screenValue += buttonText;
