@@ -59,7 +59,7 @@ i {
 }
 
 .screen-conti,
-.screenValue,
+.screenBotttomValue,
 .screenTopValue {
   width: inherit;
   background: #262626;
@@ -104,7 +104,7 @@ input {
   
 }
 
-.screenValue {
+.screenBotttomValue {
   color: #fff;
   text-align: right;
   position: absolute;
@@ -116,7 +116,7 @@ input {
   float: right;
 }
 
-.screenValue:active,.screenValue:focus,
+.screenBotttomValue:active,.screenBotttomValue:focus,
 .screenTopValue:active,.screenTopValue:focus{
   outline: none;
 }
