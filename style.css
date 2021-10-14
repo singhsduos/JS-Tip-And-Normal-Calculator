@@ -116,10 +116,10 @@ input {
   float: right;
 }
 
-/* .screenValue:active,.screenValue:focus,
+.screenValue:active,.screenValue:focus,
 .screenTopValue:active,.screenTopValue:focus{
   outline: none;
-} */
+}
 
 tr {
   display: flex;

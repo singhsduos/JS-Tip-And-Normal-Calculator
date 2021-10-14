@@ -1,116 +1,86 @@
-const screen = document.querySelector('.screenValue');
+// take all element from html doc
 const topScreen = document.querySelector('.screenTopValue');
+const bottomScreen = document.querySelector('.screenBotttomValue');
 const allClear = document.querySelector('.all-clear');
-const equal = document.querySelector('.equal');
-const operators = document.querySelectorAll('.operator');
 const numsBtns = document.querySelectorAll('button');
-const decimalBtn = document.querySelectorAll('#decimal');
-let divide = document.querySelector('.divide');
 
 
-
-
+// take all calculation in this variable
 let screenValue = '';
-let count = 0;
-for (let item of numsBtns) {
-    item.addEventListener('click', (e) => {
 
+// put for loop in button input
+for (let item of numsBtns) {
+    // add click event listener in buttons
+    item.addEventListener('click', (e) => {
+        
+        // take value from button HTML text
         let buttonText = e.target.innerText;
 
+        // multiplication 
         if (buttonText == 'x') {
-            buttonText = '*'; // changing operator in original form
-            if (topScreen.value.slice(-1) !== buttonText) { // checking last character of screen value  is not equal current operator
+            buttonText = '*'; // changing operator in original multiplication form
+            if (topScreen.value.slice(-1) !== buttonText) { // checking last character of bottomScreen value  is not equal current operator
                 if (topScreen.value.slice(-1) === '-' || topScreen.value.slice(-1) === '+' || topScreen.value.slice(-1) === '/') { // checking last character is equal in any of these operator
-                    screenValue = screenValue.slice(0, -1) + buttonText; // if last char is equal in any of the above char then replace that char with present given operator from buttonText
-                    topScreen.value = screenValue;
+                 replaceLastSignOperator(buttonText);
                 } else {
-                    if (isNaN(screen.value)) {
-                        screen.value = "";
-                        screenValue = "";
-                        screenValue = '0' + buttonText;
-                        topScreen.value = screenValue;
-                    } else {
-                        screenValue += buttonText; // if there is any number than simply apply my present input operator
-                        topScreen.value = screenValue;
-                    }
+                    checkingNan(buttonText);
                 }
             }
         }
+       
+        // divide
         else if (buttonText == '÷') {
-            buttonText = '/';
+            buttonText = '/'; // changing operator in original divide form
             if (topScreen.value.slice(-1) !== buttonText) {
                 if (topScreen.value.slice(-1) === '-' || topScreen.value.slice(-1) === '*' || topScreen.value.slice(-1) === '+') {
-                    screenValue = screenValue.slice(0, -1) + buttonText;
-                    topScreen.value = screenValue;
+                    replaceLastSignOperator(buttonText);
                 } else {
-                    if (isNaN(screen.value)) {
-                        screen.value = "";
-                        screenValue = "";
-                        screenValue = '0' + buttonText;
-                        topScreen.value = screenValue;
-                    } else {
-                        screenValue += buttonText;
-                        topScreen.value = screenValue;
-                    }
+                    checkingNan(buttonText);
                 }
             }
         }
-
-
+   
+        // subtraction
         else if (buttonText === '-') {
             if (topScreen.value.slice(-1) !== buttonText) {
                 if (topScreen.value.slice(-1) === '+' || topScreen.value.slice(-1) === '*' || topScreen.value.slice(-1) === '/') {
-                    screenValue = screenValue.slice(0, -1) + buttonText;
-                    topScreen.value = screenValue;
+                    replaceLastSignOperator(buttonText);
                 }
 
                 else {
-                    if (isNaN(screen.value)) {
-                        screen.value = "";
-                        screenValue = "";
-                        screenValue = '0' + buttonText;
-                        topScreen.value = screenValue;
-                    } else {
-                        screenValue += buttonText;
-                        topScreen.value = screenValue;
-                    }
+                    checkingNan(buttonText);
                 }
             }
         }
-
+         
+        // addition
         else if (buttonText === '+') {
             if (topScreen.value.slice(-1) !== buttonText) {
                 if (topScreen.value.slice(-1) === '-' || topScreen.value.slice(-1) === '*' || topScreen.value.slice(-1) === '/') {
-                    screenValue = screenValue.slice(0, -1) + buttonText;
-                    topScreen.value = screenValue;
+                    replaceLastSignOperator(buttonText);
                 } else {
-                    if (isNaN(screen.value)) {
-                        screen.value = "";
-                        screenValue = "";
-                        screenValue = '0' + buttonText;
-                        topScreen.value = screenValue;
-                    } else {
-                        screenValue += buttonText;
-                        topScreen.value = screenValue;
-                    }
+                    checkingNan(buttonText);
                 }
             }
         }
 
+        // All Clear
         else if (buttonText == 'AC') {
             screenValue = "";
             topScreen.value = screenValue;
-            screen.value = screenValue;
+            bottomScreen.value = screenValue;
         }
-
+ 
+        // deleting last input 
         else if (buttonText == 'D') {
             screenValue = screenValue.slice(0, -1);
             topScreen.value = screenValue;
         }
-
+  
+        // decimal
         else if (buttonText === '.') {
-            if (topScreen.value.includes('.') && screen.value !== "") {
-                screen.value = '';
+            if (topScreen.value.includes('.') && bottomScreen.value !== "") {
+                bottomScreen.value = '';
                 screenValue = '0' + buttonText;
                 topScreen.value = screenValue;
             }
@@ -120,8 +90,8 @@ for (let item of numsBtns) {
                     screenValue = '0' + buttonText;
                     topScreen.value = screenValue;
                 }
-                else if (screen.value !== "") {
-                    screen.value = '';
+                else if (bottomScreen.value !== "") {
+                    bottomScreen.value = '';
                     screenValue = '0' + buttonText;
                     topScreen.value = screenValue;
                 }
@@ -132,35 +102,71 @@ for (let item of numsBtns) {
             }
         }
 
+            //  calculating percentage out of 100
         else if (buttonText == '%') {
             screenValue = (screenValue / 100);
             if (screenValue.toString().length > 10) {
-                screen.value = "= " + parseInt(screenValue).toExponential(4);
+                bottomScreen.value = "= " + parseInt(screenValue).toExponential(4);
             } else
 
-                screen.value = "= " + screenValue;
+                bottomScreen.value = "= " + screenValue;
         }
 
+        // equal operator for calculation
         else if (buttonText == '=') {
             screenValue = eval(screenValue);
             if (screenValue.toString().length > 10) {
-                screen.value = "= " + parseInt(screenValue).toExponential(4);
+                bottomScreen.value = "= " + parseInt(screenValue).toExponential(4);
             } else
-                screen.value = "= " + screenValue;
+                bottomScreen.value = "= " + screenValue;
         }
-
+            
+        // input all num values
         else {
-            if (isNaN(screen.value)) {
-                screen.value = "";
+
+            let convertBottomToString = bottomScreen.value.toString();
+            let clearBottomValue = convertBottomToString.substring(2);
+
+            if (isNaN(clearBottomValue)) {
+                bottomScreen.value = "";
                 screenValue = "";
                 screenValue += buttonText;
+
                 topScreen.value = screenValue;
             } else {
-                screen.value = '';
                 screenValue += buttonText;
                 topScreen.value = screenValue;
             }
         }
 
     })
+}
+
+// function for checking NaN error
+function checkingNan(buttonInput) {
+
+    let convertBottomToString = bottomScreen.value.toString();
+    let clearBottomValue = convertBottomToString.substring(2); //removing '=' sign and space in bottomScreenValue
+
+    if (isNaN(screenValue)) {
+        bottomScreen.value = "";
+        screenValue = "";
+        screenValue = '0' + buttonInput;
+        topScreen.value = screenValue;
+    }
+    else if (clearBottomValue !== "" && !isNaN(clearBottomValue)) {
+        screenValue += buttonInput;
+        console.log("inside checking nan ka elese if loop", screenValue);
+        topScreen.value = screenValue;
+    }
+    else {
+        screenValue += buttonInput; // if there is any number than simply apply my present input operator
+        topScreen.value = screenValue;
+    }
+}
+
+// function for replacing last sign operator with new sign operator
+function replaceLastSignOperator(buttonInput) {
+    screenValue = screenValue.slice(0, -1) + buttonInput; // if last char is equal in any of the above char then replace that char with present given operator from buttonText
+    topScreen.value = screenValue;
 }
