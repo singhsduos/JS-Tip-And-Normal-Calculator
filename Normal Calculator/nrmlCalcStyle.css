@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400;1,700&display=swap");
+
+  
+/*
+ ______________________________________________
+|                                              |
+|     DEFAULT BODY AND OTHER CSS TAG           |
+|______________________________________________|
+
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black-theme: #262626;
+  --body-theme: #efefef;
+  --red-shade: #dd6969;
+  --btn-shadow: #0c0c0c;
+  --btn-angleShadow: #000;
+  --curve-shade: #000000;
+  --ans-shade: #fff;
+  --input-shade: rgb(194, 194, 194);
+}
+
+
+
+body {
+  background: var(--body-theme);
+  height: 100vh;
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  flex-direction: column;
+}
+
+input { 
+ /* unicode-bidi:embed; 
+ direction:rtl;       */
+ text-align: right;       
+}
+
+tr {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+button {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.3rem;
+  color: var(--ans-shade);
+  padding: 10px;
+  font-weight: bold;
+  bottom: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 50%;
+  border: none;
+  background: #262626;
+  box-shadow: 2px 2px 4px var(--btn-shadow), -1px -1px 3px var(--btn-angleShadow);
+}
+button:hover {
+  box-shadow: 0 2px 3px var(--btn-shadow), 0 -1px 3px var(--btn-angleShadow);
+  top: 1px;
+}
+button:active {
+  box-shadow: inset 1px 1px 3px var(--btn-shadow), inset -1px -1px 3px var(--btn-angleShadow);
+  top: 5px;
+}
+
+footer {
+  margin-top: 1rem;
+}
+
+a {
+  text-decoration: none;
+  margin: 0rem 0.5rem;
+}
+
+i {
+  color: black;
+}
+
+/*
+ ______________________________________________
+|                                              |
+|              UTILITIES CLASS                 |
+|______________________________________________|
+*/
+
+.container {
+  background: var(--black-theme);
+  width: 239px;
+  height: 490px;
+  border-radius: 1.3rem;
+  position: relative;
+}
+
+.curved {
+  height: 277px;
+  width: 63px;
+  background-color: var(--curve-shade);
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  position: absolute;
+  right: 0;
+  bottom: 25px;
+}
+
+.button-conti {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.screen-conti,
+.screenBotttomValue,
+.screenTopValue {
+  width: inherit;
+  background: var(--black-theme);
+  border-bottom-color: var(--black-theme);
+  border: none;
+  font-family: "Lato", sans-serif; 
+}
+
+.screen-conti {
+  border-top-left-radius: 1.3rem;
+  border-top-right-radius: 1.3rem;
+  position: relative;
+  height: 195px;
+  display: flex;
+}
+      
+
+.screenTopValue {
+  color: var(--input-shade);
+  border-top-left-radius: 1.3rem;
+  border-top-right-radius: 1.3rem;
+  font-size: 1.2rem;
+  padding: 0 15px;
+  margin-bottom: 0px;
+  position: absolute;
+  top: 0;
+  height: 170px;
+}
+
+.screenBotttomValue {
+  color: var(--ans-shade);
+  text-align: right;
+  position: absolute;
+  height: 97.5px;
+  font-size: 2rem;
+  padding: 0 15px;
+  margin-top: 0px;
+  bottom: 0;
+  float: right;
+}
+
+.screenBotttomValue:active,.screenBotttomValue:focus,
+.screenTopValue:active,.screenTopValue:focus{
+  outline: none;
+}
+
+
+
+.equal,
+.all-clear {
+  background-color: var(--red-shade);
+}
+
+.equal {
+  width: 105px;
+  padding: 5px 10px;
+  border-radius: 35px;
+}
