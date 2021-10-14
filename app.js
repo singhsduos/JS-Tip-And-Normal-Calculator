@@ -12,7 +12,7 @@ let screenValue = '';
 for (let item of numsBtns) {
     // add click event listener in buttons
     item.addEventListener('click', (e) => {
-        
+
         // take value from button HTML text
         let buttonText = e.target.innerText;
 
@@ -21,13 +21,13 @@ for (let item of numsBtns) {
             buttonText = '*'; // changing operator in original multiplication form
             if (topScreen.value.slice(-1) !== buttonText) { // checking last character of bottomScreen value  is not equal current operator
                 if (topScreen.value.slice(-1) === '-' || topScreen.value.slice(-1) === '+' || topScreen.value.slice(-1) === '/') { // checking last character is equal in any of these operator
-                 replaceLastSignOperator(buttonText);
+                    replaceLastSignOperator(buttonText);
                 } else {
                     checkingNan(buttonText);
                 }
             }
         }
-       
+
         // divide
         else if (buttonText == '÷') {
             buttonText = '/'; // changing operator in original divide form
@@ -39,7 +39,7 @@ for (let item of numsBtns) {
                 }
             }
         }
-   
+
         // subtraction
         else if (buttonText === '-') {
             if (topScreen.value.slice(-1) !== buttonText) {
@@ -52,7 +52,7 @@ for (let item of numsBtns) {
                 }
             }
         }
-         
+
         // addition
         else if (buttonText === '+') {
             if (topScreen.value.slice(-1) !== buttonText) {
@@ -70,21 +70,26 @@ for (let item of numsBtns) {
             topScreen.value = screenValue;
             bottomScreen.value = screenValue;
         }
- 
+
         // deleting last input 
         else if (buttonText == 'D') {
             screenValue = screenValue.slice(0, -1);
             topScreen.value = screenValue;
         }
-  
+
         // decimal
         else if (buttonText === '.') {
+            // check first, if there is present any decimal dot in top screen 
+            // and bottom screen have some previous calculation value
             if (topScreen.value.includes('.') && bottomScreen.value !== "") {
-                bottomScreen.value = '';
-                screenValue = '0' + buttonText;
+                bottomScreen.value = '';  // clear previous calculation answer
+                screenValue = '0' + buttonText; 
                 topScreen.value = screenValue;
             }
+            // here we trying not to add decimal point more than one time
             else if (buttonText === '.' && topScreen.value.includes('.')) return;
+                
+            // in else statement we are adding decimal with 0 and also clearing bottom screen value
             else {
                 if (topScreen.value === "") {
                     screenValue = '0' + buttonText;
@@ -102,7 +107,20 @@ for (let item of numsBtns) {
             }
         }
 
-            //  calculating percentage out of 100
+        //  handling '0th' input
+        else if (buttonText == '0') {
+            if (topScreen.value !== "" && bottomScreen.value !== "") {
+                bottomScreen.value = "";
+                screenValue = "";
+                screenValue += buttonText;
+                topScreen.value = screenValue;
+            } else if (bottomScreen.value === "") {
+                screenValue += buttonText;
+                topScreen.value = screenValue;
+            }
+        }
+
+        //  calculating percentage out of 100
         else if (buttonText == '%') {
             screenValue = (screenValue / 100);
             if (screenValue.toString().length > 10) {
@@ -120,10 +138,13 @@ for (let item of numsBtns) {
             } else
                 bottomScreen.value = "= " + screenValue;
         }
-            
+
         // input all num values
         else {
-
+          
+            // converting nums to string 
+            // and then removing two character from bottom screen i.e equal to sign(=) in answer 
+            // and space after equal sign
             let convertBottomToString = bottomScreen.value.toString();
             let clearBottomValue = convertBottomToString.substring(2);
 
@@ -131,9 +152,16 @@ for (let item of numsBtns) {
                 bottomScreen.value = "";
                 screenValue = "";
                 screenValue += buttonText;
-
                 topScreen.value = screenValue;
-            } else {
+            }
+           
+            //  putting limit exceed for unnecessary calculation
+            else if (topScreen.value.toString().length > 17){
+                alert("Only 18 numbers limit,\n Try to reduce");
+                return;
+            }
+            
+            else {
                 screenValue += buttonText;
                 topScreen.value = screenValue;
             }
