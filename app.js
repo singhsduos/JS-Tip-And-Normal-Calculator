@@ -24,9 +24,15 @@ for (let item of numsBtns) {
                     screenValue = screenValue.slice(0, -1) + buttonText; // if last char is equal in any of the above char then replace that char with present given operator from buttonText
                     topScreen.value = screenValue;
                 } else {
-                    screenValue += buttonText; // if there is any number than simply apply my present input operator
-                    topScreen.value = screenValue;
-
+                    if (isNaN(screen.value)) {
+                        screen.value = "";
+                        screenValue = "";
+                        screenValue = '0' + buttonText;
+                        topScreen.value = screenValue;
+                    } else {
+                        screenValue += buttonText; // if there is any number than simply apply my present input operator
+                        topScreen.value = screenValue;
+                    }
                 }
             }
         }
@@ -37,9 +43,15 @@ for (let item of numsBtns) {
                     screenValue = screenValue.slice(0, -1) + buttonText;
                     topScreen.value = screenValue;
                 } else {
-                    screenValue += buttonText;
-                    topScreen.value = screenValue;
-
+                    if (isNaN(screen.value)) {
+                        screen.value = "";
+                        screenValue = "";
+                        screenValue = '0' + buttonText;
+                        topScreen.value = screenValue;
+                    } else {
+                        screenValue += buttonText;
+                        topScreen.value = screenValue;
+                    }
                 }
             }
         }
@@ -50,14 +62,18 @@ for (let item of numsBtns) {
                 if (topScreen.value.slice(-1) === '+' || topScreen.value.slice(-1) === '*' || topScreen.value.slice(-1) === '/') {
                     screenValue = screenValue.slice(0, -1) + buttonText;
                     topScreen.value = screenValue;
-                } 
-                
-                
-                
-                else {
-                    screenValue += buttonText;
-                    topScreen.value = screenValue;
+                }
 
+                else {
+                    if (isNaN(screen.value)) {
+                        screen.value = "";
+                        screenValue = "";
+                        screenValue = '0' + buttonText;
+                        topScreen.value = screenValue;
+                    } else {
+                        screenValue += buttonText;
+                        topScreen.value = screenValue;
+                    }
                 }
             }
         }
@@ -68,9 +84,15 @@ for (let item of numsBtns) {
                     screenValue = screenValue.slice(0, -1) + buttonText;
                     topScreen.value = screenValue;
                 } else {
-                    screenValue += buttonText;
-                    topScreen.value = screenValue;
-
+                    if (isNaN(screen.value)) {
+                        screen.value = "";
+                        screenValue = "";
+                        screenValue = '0' + buttonText;
+                        topScreen.value = screenValue;
+                    } else {
+                        screenValue += buttonText;
+                        topScreen.value = screenValue;
+                    }
                 }
             }
         }
@@ -92,10 +114,7 @@ for (let item of numsBtns) {
                 screenValue = '0' + buttonText;
                 topScreen.value = screenValue;
             }
-           
-            
             else if (buttonText === '.' && topScreen.value.includes('.')) return;
-            
             else {
                 if (topScreen.value === "") {
                     screenValue = '0' + buttonText;
@@ -106,8 +125,6 @@ for (let item of numsBtns) {
                     screenValue = '0' + buttonText;
                     topScreen.value = screenValue;
                 }
-                    
-                
                 else {
                     screenValue += buttonText;
                     topScreen.value = screenValue;
@@ -133,9 +150,16 @@ for (let item of numsBtns) {
         }
 
         else {
-            screen.value = '';
-            screenValue += buttonText;
-            topScreen.value = screenValue;
+            if (isNaN(screen.value)) {
+                screen.value = "";
+                screenValue = "";
+                screenValue += buttonText;
+                topScreen.value = screenValue;
+            } else {
+                screen.value = '';
+                screenValue += buttonText;
+                topScreen.value = screenValue;
+            }
         }
 
     })
