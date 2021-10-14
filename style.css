@@ -66,8 +66,10 @@ i {
   border-bottom-color: #262626;
   border: none;
   font-family: "Lato", sans-serif;
+  
   /* display: flex;
   flex-direction: column; */
+ 
 }
 
 .screen-conti {
@@ -77,15 +79,19 @@ i {
   height: 195px;
   display: flex;
 }
+                
+input { 
+ /* unicode-bidi:embed; 
+ direction:rtl;       */
+ text-align: right;       
+}
 
-/* input, textarea { 
- unicode-bidi:plaintext; 
- direction:rtl; 
-} */
+
+
+
 
 .screenTopValue {
   color: rgb(194, 194, 194);
-  text-align: right;
   border-top-left-radius: 1.3rem;
   border-top-right-radius: 1.3rem;
   font-size: 1.2rem;
@@ -93,8 +99,9 @@ i {
   margin-bottom: 0px;
   position: absolute;
   top: 0;
-  float: right;
   height: 170px;
+  
+  
 }
 
 .screenValue {

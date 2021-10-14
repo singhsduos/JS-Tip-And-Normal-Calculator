@@ -8,6 +8,8 @@ const decimalBtn = document.querySelectorAll('#decimal');
 let divide = document.querySelector('.divide');
 
 
+
+
 let screenValue = '';
 let count = 0;
 for (let item of numsBtns) {
@@ -17,8 +19,8 @@ for (let item of numsBtns) {
 
         if (buttonText == 'x') {
             buttonText = '*'; // changing operator in original form
-            if (screenValue.slice(-1) !== buttonText) { // checking last character of screen value  is not equal current operator
-                if (screenValue.slice(-1) === '-' || screenValue.slice(-1) === '+' || screenValue.slice(-1) === '/') { // checking last character is equal in any of these operator
+            if (topScreen.value.slice(-1) !== buttonText) { // checking last character of screen value  is not equal current operator
+                if (topScreen.value.slice(-1) === '-' || topScreen.value.slice(-1) === '+' || topScreen.value.slice(-1) === '/') { // checking last character is equal in any of these operator
                     screenValue = screenValue.slice(0, -1) + buttonText; // if last char is equal in any of the above char then replace that char with present given operator from buttonText
                     topScreen.value = screenValue;
                 } else {
@@ -30,8 +32,8 @@ for (let item of numsBtns) {
         }
         else if (buttonText == '÷') {
             buttonText = '/';
-            if (screenValue.slice(-1) !== buttonText) {
-                if (screenValue.slice(-1) === '-' || screenValue.slice(-1) === '*' || screenValue.slice(-1) === '+') {
+            if (topScreen.value.slice(-1) !== buttonText) {
+                if (topScreen.value.slice(-1) === '-' || topScreen.value.slice(-1) === '*' || topScreen.value.slice(-1) === '+') {
                     screenValue = screenValue.slice(0, -1) + buttonText;
                     topScreen.value = screenValue;
                 } else {
@@ -41,14 +43,18 @@ for (let item of numsBtns) {
                 }
             }
         }
-            
+
 
         else if (buttonText === '-') {
-            if (screenValue.slice(-1) !== buttonText) {
-                if (screenValue.slice(-1) === '+' || screenValue.slice(-1) === '*' || screenValue.slice(-1) === '/' ) {
+            if (topScreen.value.slice(-1) !== buttonText) {
+                if (topScreen.value.slice(-1) === '+' || topScreen.value.slice(-1) === '*' || topScreen.value.slice(-1) === '/') {
                     screenValue = screenValue.slice(0, -1) + buttonText;
                     topScreen.value = screenValue;
-                } else {
+                } 
+                
+                
+                
+                else {
                     screenValue += buttonText;
                     topScreen.value = screenValue;
 
@@ -57,8 +63,8 @@ for (let item of numsBtns) {
         }
 
         else if (buttonText === '+') {
-            if (screenValue.slice(-1) !== buttonText) {
-                if (screenValue.slice(-1) === '-' || screenValue.slice(-1) === '*' || screenValue.slice(-1) === '/' ) {
+            if (topScreen.value.slice(-1) !== buttonText) {
+                if (topScreen.value.slice(-1) === '-' || topScreen.value.slice(-1) === '*' || topScreen.value.slice(-1) === '/') {
                     screenValue = screenValue.slice(0, -1) + buttonText;
                     topScreen.value = screenValue;
                 } else {
@@ -68,43 +74,53 @@ for (let item of numsBtns) {
                 }
             }
         }
-            
+
         else if (buttonText == 'AC') {
             screenValue = "";
             topScreen.value = screenValue;
             screen.value = screenValue;
         }
-            
+
         else if (buttonText == 'D') {
             screenValue = screenValue.slice(0, -1);
             topScreen.value = screenValue;
         }
-            
-        else if (buttonText === '.') {
-            for (let i of topScreen.value) {
-                if (i == buttonText) {
-                    count++;
-                }
-            }
-            if (count > 0) {
-                return;
 
-            } else {
+        else if (buttonText === '.') {
+            if (topScreen.value.includes('.') && screen.value !== "") {
+                screen.value = '';
+                screenValue = '0' + buttonText;
+                topScreen.value = screenValue;
+            }
+           
+            
+            else if (buttonText === '.' && topScreen.value.includes('.')) return;
+            
+            else {
                 if (topScreen.value === "") {
                     screenValue = '0' + buttonText;
                     topScreen.value = screenValue;
-                } else {
+                }
+                else if (screen.value !== "") {
+                    screen.value = '';
+                    screenValue = '0' + buttonText;
+                    topScreen.value = screenValue;
+                }
+                    
+                
+                else {
                     screenValue += buttonText;
                     topScreen.value = screenValue;
                 }
             }
         }
-            
+
         else if (buttonText == '%') {
             screenValue = (screenValue / 100);
             if (screenValue.toString().length > 10) {
                 screen.value = "= " + parseInt(screenValue).toExponential(4);
             } else
+
                 screen.value = "= " + screenValue;
         }
 
@@ -115,8 +131,8 @@ for (let item of numsBtns) {
             } else
                 screen.value = "= " + screenValue;
         }
-            
-         else {
+
+        else {
             screen.value = '';
             screenValue += buttonText;
             topScreen.value = screenValue;
