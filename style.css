@@ -140,7 +140,6 @@ input[type="number"] {
   margin: 1rem 0rem;
 }
 
-
 .counter-conti {
   display: flex;
   flex-direction: row;
@@ -166,7 +165,7 @@ button:hover {
 }
 
 button:hover,
-button:focus{
+button:focus {
   outline: none;
 }
 
@@ -201,7 +200,7 @@ button:focus{
   text-align: center;
 }
 
-.tip-output{
+.tip-output {
   display: flex;
   flex-direction: row;
 }
@@ -245,4 +244,18 @@ button:focus{
   font-weight: 600;
   color: #43c49f;
   text-align: center;
+}
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+
+@media screen and (max-width: 1024px) {
+  .claculation-conti {
+    height: 150px;
+    margin-top: 3px;
+  }
 }
