@@ -209,7 +209,7 @@ i {
 
 .claculation-conti {
   background-color: var(--white-shade);
-  height: 146px;
+  height: 148px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   display: flex;
@@ -287,7 +287,7 @@ i {
 
 @media screen and (max-width: 1024px) {
   .claculation-conti {
-    height: 142px;
+    height: 148px;
     margin-top: 3px;
   }
 }
