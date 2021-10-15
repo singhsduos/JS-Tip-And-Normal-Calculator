@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./tipCalcStyle.css">
+    <!-- font-awesome-icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <title>Tip Calculator</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+
+            <!-- Section-1 -->
+            <div class="curved">
+                <h1 class="heading">Tipsy Calculator</h1>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="white" fill-opacity="1"
+                    d="M0,160L80,133.3C160,107,320,53,480,80C640,107,800,213,960,256C1120,299,1280,277,1360,266.7L1440,256L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+                </path>
+            </svg>
+
+
+            <!-- Section-2 -->
+            <div class="calcu-conti">
+
+                <div class="enterBill-conti">
+                    <label for="enterBill">Enter bill total</label>
+                    <div class="enterbill-input-conti">
+                        <span class="rs-sign">₹</span>
+                        <input type="number" name="enterBill" id="enterBill">
+                    </div>
+
+                </div>
+
+                <div class="tipPercentage-conti">
+                    <label for="tip">Choose tip</label>
+                    <div class="tip-input-conti">
+                        <div class="tip-output">
+                            <output id="Output2" class="output">0</output>
+                            <span> %</span>
+                        </div>
+                        <input type="range" name="tip[1]" id="tip" min="0" value="0" max="100" step="1"
+                            oninput="Output2.value = tip.value">
+
+                    </div>
+                </div>
+
+                <div class="split-conti">
+                    <h3 class="split-heading">Split</h3>
+                    <div class="counter-conti">
+                        <button class="neg-countBtn">-</button>
+                        <h4 class="persons">1</h4>
+                        <button class="pos-countBtn">+</button>
+                    </div>
+                </div>
+
+
+
+                <!-- Section-3 -->
+                <div class="claculation-conti">
+                    <div class="totalBill-conti">
+                        <h4 class="total-heading">Total per person</h4>
+                        <input type="text" name="total-bill" class="totalBill" readonly>
+                    </div>
+
+                    <div class="billAndTip-conti">
+                        <div class="bill-conti">
+                            <h4 class="bill-heading">bill</h4>
+                            <input type="text" name="bill" class="bill" readonly>
+                        </div>
+                        <div class="tip-conti">
+                            <h4 class="tip-heading">tip</h4>
+                            <input type="text" name="tip" class="tip" readonly>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <a href="https://www.linkedin.com/in/neeleshsng/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin fa-lg"></i>
+        </a>
+        <a href="https://github.com/singhsduos/JS-Tip-And-Normal-Calculator " target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a href="https://twitter.com/singhs_duos" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </footer>
+    <script src="./tipCalcJS.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap");
+
+/*
+ ______________________________________________
+|                                              |
+|     DEFAULT BODY AND OTHER CSS TAG           |
+|______________________________________________|
+
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green-theme: #51eec2;
+  --lightWhite-shade: #f5f4f4;
+  --white-shade: white;
+  --perPerson-shade: #43c49f;
+  --h4-shade: #9ee9c6;
+ 
+}
+
+body {
+  background-color: var(--green-theme);
+  height: 100vh;
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+label,
+.split-heading {
+  font-weight: 600;
+  color: var(--lightWhite-shade);
+  display: block;
+  font-size: 1rem;
+}
+
+input[type="number"] {
+  border: none;
+  border-bottom: 2px solid var(--white-shade);
+  background-color: var(--green-theme);
+  color: var(--white-shade);
+  font-size: 1.4rem;
+  width: 84px;
+  font-weight: 600;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button {
+  margin: 20px;
+  padding: 5px 15px;
+  color: var(--white-shade);
+  background-color: var(--green-theme);
+  border-radius: 5px;
+  border: 2px solid var(--white-shade);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(0.9);
+}
+
+button:hover,
+button:focus {
+  outline: none;
+}
+
+/* footer */
+
+footer {
+  margin-top: 1rem;
+}
+
+a {
+  text-decoration: none;
+  margin: 0rem 0.5rem;
+}
+
+i {
+  color: black;
+}
+
+.container {
+  position: relative;
+  width: 270px;
+  height: 500px;
+  border-radius: 1.3rem;
+  -webkit-border-radius: 46px;
+  border-radius: 46px;
+  background: var(--green-theme);
+  -webkit-box-shadow: 20px 20px 38px #3aab8c, -20px -20px 38px #68fff8;
+  box-shadow: 20px 20px 38px #3aab8c, -20px -20px 38px #68fff8;
+}
+
+/*********** Section-1 ***********/
+
+.curved {
+  background-color: var(--white-shade);
+  border-top-left-radius: 46px;
+  border-top-right-radius: 46px;
+  margin-top: 0px;
+  height: 3rem;
+  width: 270px;
+}
+
+.heading {
+  color: var(--green-theme);
+  text-align: center;
+  font-size: 1.4rem;
+  padding-top: 1rem;
+  font-family: "Merriweather", serif;
+  font-style: italic;
+}
+
+
+/*********** Section-2 ***********/
+
+.calcu-conti {
+  width: 70%;
+  margin: auto;
+  margin-top: 0rem;
+}
+
+#enterBill,
+#tip {
+  text-align: left;
+  font-family: "Merriweather", serif;
+}
+
+.rs-sign {
+  color: var(--white-shade);
+  font-weight: 600;
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+
+.enterbill-input-conti,
+.tip-input-conti {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.tipPercentage-conti {
+  margin: 1rem 0rem;
+}
+
+
+.tip-input-conti {
+  flex-direction: column;
+  font-size: 1.2rem;
+  color: var(--white-shade);
+  font-weight: 600;
+}
+
+
+.tip-output {
+  display: flex;
+  flex-direction: row;
+}
+
+.counter-conti {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.persons {
+  font-size: 1.1rem;
+  color: var(--white-shade);
+  font-family: "Merriweather", serif;
+}
+
+
+/*********** Section-3 ***********/
+
+.claculation-conti {
+  background-color: var(--white-shade);
+  height: 146px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: var(--green-theme);
+}
+
+.claculation-conti h4 {
+  font-weight: 600;
+  color: var(--h4-shade);
+}
+
+
+.totalBill-conti {
+  padding: 0.5rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.totalBill {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--perPerson-shade);
+  border: none;
+  width: 189px;
+  height: 3rem;
+  text-align: center;
+}
+
+.billAndTip-conti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: none;
+}
+
+.bill-conti,
+.tip-conti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bill-conti {
+  margin-right: 0.5rem;
+}
+
+.tip-conti {
+  margin-left: 0.5rem;
+}
+
+.bill,
+.tip {
+  border: none;
+  width: 5rem;
+  font-weight: 600;
+  color: var(--perPerson-shade);
+  text-align: center;
+  font-family: "Merriweather", serif;
+}
+
+
+
+/*
+ ______________________________________________
+|                                              |
+|            MEDIA QUERIES CSS                 |
+|______________________________________________|
+*/
+
+@media screen and (max-width: 1024px) {
+  .claculation-conti {
+    height: 142px;
+    margin-top: 3px;
+  }
+}
