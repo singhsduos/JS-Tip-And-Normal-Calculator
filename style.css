@@ -1,0 +1,81 @@
+
+/*
+ ______________________________________________
+|                                              |
+|     DEFAULT BODY AND OTHER CSS TAG           |
+|______________________________________________|
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e65151;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+h4,h1{
+  text-align: center;
+}
+
+/* footer */
+
+footer {
+  margin-top: 1rem;
+  text-align: center;
+  
+}
+
+a {
+  text-decoration: none;
+  margin: 0rem 0.5rem;
+  text-align: center;
+}
+
+i {
+  color: white;
+}
+
+/*
+ ______________________________________________
+|                                              |
+|              UTILITIES CLASS                 |
+|______________________________________________|
+*/
+
+.calc-conti {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.css-button-neumorphic {
+  min-width: 130px;
+  height: 40px;
+  color:  #ff5d5d;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #e65151;
+  box-shadow: 2px 2px 4px #c44545, -1px -1px 3px  #ff5d5d;
+  color: white;
+  margin: 2rem 0rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 1rem 0rem;
+}
+.css-button-neumorphic:active {
+  box-shadow: inset 1px 1px 3px #c44545, inset -1px -1px 3px  #ff5d5d;
+}
