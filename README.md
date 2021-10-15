@@ -24,6 +24,7 @@ This is a combined web app of Tip-Calculator & Normal-Calculator.
 
 ## Demo Video
 
+![calculator](https://user-images.githubusercontent.com/32032008/137517524-c334f542-d440-48cb-82f9-04e622f199d9.gif)
 
 
 
