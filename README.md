@@ -1,12 +1,12 @@
 # JS-Tip-And-Normal-Calculator
 This is a combined web app of Tip-Calculator & Normal-Calculator.
 
-### <a href="https://github.com/singhsduos/JS-Tip-And-Normal-Calculator" target="_blank">**Visit Now 🚀**</a>
+### <a href="https://neelesh-calculators.netlify.app/" target="_blank">**Visit Now 🚀**</a>
 
 
 ## Things I learend
-1. 
-2. 
+1. Using Mathematical Calculation in JS
+2. More CSS Rules
 
 
 ## Tech Stack
@@ -16,7 +16,9 @@ This is a combined web app of Tip-Calculator & Normal-Calculator.
 
 ## ScreenShot
 
-
+![Screenshot_20211015_202140](https://user-images.githubusercontent.com/32032008/137508095-c0dcec2b-d7c0-4612-9d77-92b0b61c0d98.png)
+![Screenshot_20211015_202209](https://user-images.githubusercontent.com/32032008/137508121-5057e463-e00e-4a28-826a-fdbbfa7fda78.png)
+![Screenshot_20211015_202237](https://user-images.githubusercontent.com/32032008/137508127-849937ab-b3bf-4f4c-82af-530af729e423.png)
 
 
 
