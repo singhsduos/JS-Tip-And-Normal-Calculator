@@ -34,14 +34,20 @@
                         <span class="dollar">$</span>
                         <input type="number" name="enterBill" id="enterBill">
                     </div>
-                    
+
                 </div>
 
                 <div class="tipPercentage-conti">
                     <label for="tip">Choose tip</label>
                     <div class="tip-input-conti">
-                    <input type="range" name="tip" id="tip" min="0" max="100">
-                </div>
+                        <div class="tip-output">
+                            <output id="Output2" class="output">0</output>
+                            <span> %</span>
+                        </div>
+                        <input type="range" name="tip[1]" id="tip" min="0" value="0" max="100" step="1"
+                            oninput="Output2.value = tip.value">
+
+                    </div>
                 </div>
 
                 <div class="split-conti">

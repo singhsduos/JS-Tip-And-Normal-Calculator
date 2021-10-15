@@ -41,7 +41,7 @@ i {
 .container {
   position: relative;
   width: 270px;
-  height: 495px;
+  height: 500px;
   border-radius: 1.3rem;
   -webkit-border-radius: 46px;
   border-radius: 46px;
@@ -69,6 +69,7 @@ i {
 .calcu-conti {
   width: 70%;
   margin: auto;
+  margin-top: 0rem;
 }
 
 label,
@@ -128,13 +129,17 @@ input[type="number"] {
   margin-top: 5px;
 }
 
+.tip-input-conti {
+  flex-direction: column;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 600;
+}
+
 .tipPercentage-conti {
   margin: 1rem 0rem;
 }
 
-#tip {
-  border: 2px solid red;
-}
 
 .counter-conti {
   display: flex;
@@ -152,6 +157,17 @@ button {
   border: 2px solid white;
   font-weight: 700;
   font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(0.9);
+}
+
+button:hover,
+button:focus{
+  outline: none;
 }
 
 .persons {
@@ -161,11 +177,10 @@ button {
 
 .claculation-conti {
   background-color: white;
-  height: 162px;
+  height: 149px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   color: #51eec2;
@@ -173,7 +188,7 @@ button {
 
 .claculation-conti h4 {
   font-weight: 600;
-  color: #9EE9C6;
+  color: #9ee9c6;
 }
 
 .totalBill {
@@ -186,13 +201,17 @@ button {
   text-align: center;
 }
 
+.tip-output{
+  display: flex;
+  flex-direction: row;
+}
+
 .totalBill-conti {
   padding: 0.5rem 0rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 0.5rem;
 }
 
 .billAndTip-conti {
@@ -226,5 +245,4 @@ button {
   font-weight: 600;
   color: #43c49f;
   text-align: center;
-  /* margin: 0.5rem; */
 }
